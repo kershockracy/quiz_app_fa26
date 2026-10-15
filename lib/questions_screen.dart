@@ -1,5 +1,6 @@
 //questions screen
 import 'package:flutter/material.dart';
+import 'package:quiz_app_fa26/answer_button.dart';
 
 class QuestionsScreen extends StatefulWidget {
   @override
@@ -11,8 +12,19 @@ class QuestionsScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionsScreen> {
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Text("Questions Screen");
+  Widget build(context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Text('The question...', style: TextStyle(color: Colors.white)),
+          const SizedBox(height: 30),
+          AnswerButton(answerText: "Question 1", onTap: () {}),
+          AnswerButton(answerText: "Question 2", onTap: () {}),
+          AnswerButton(answerText: "Question 3", onTap: () {}),
+          AnswerButton(answerText: "Question 4", onTap: () {})
+        ],
+      ),
+    );
   }
 }
