@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AnswerButton extends StatelessWidget{
@@ -34,7 +35,10 @@ class AnswerButton extends StatelessWidget{
 
       onPressed: onTap,
 
-      style: ElevatedButton.styleFrom(),
+      style: ElevatedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+        backgroundColor: Colors.purple,
+        foregroundColor: ,
 
       child: Text(answerText),
 

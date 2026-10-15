@@ -14,15 +14,16 @@ class _QuestionScreenState extends State<QuestionsScreen> {
   @override
   Widget build(context) {
     return Center(
+      final currentQuestion = questions[0];
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text('The question...', style: TextStyle(color: Colors.white)),
+          Text(currentQuestion.text, style: TextStyle(color: Colors.white)),
           const SizedBox(height: 30),
-          AnswerButton(answerText: "Question 1", onTap: () {}),
-          AnswerButton(answerText: "Question 2", onTap: () {}),
-          AnswerButton(answerText: "Question 3", onTap: () {}),
-          AnswerButton(answerText: "Question 4", onTap: () {})
+          AnswerButton(answerText: currentQuestion.answers[0], onTap: () {}),
+          AnswerButton(answerText: currentQuestion.answers[1], onTap: () {}),
+          AnswerButton(answerText: currentQuestion.answers[2], onTap: () {}),
+          AnswerButton(answerText: currentQuestion.answers[3], onTap: () {})
         ],
       ),
     );
