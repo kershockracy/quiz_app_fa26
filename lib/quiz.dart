@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_fa26/data/questions.dart';
 import 'package:quiz_app_fa26/questions_screen.dart';
+import 'package:quiz_app_fa26/results_screen.dart';
 import 'package:quiz_app_fa26/start_screen.dart';
 
 class Quiz extends StatefulWidget {
@@ -12,13 +14,14 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   Widget? activeScreen;
-  final List<String> selectedAnswers = [];
+  List<String> selectedAnswers = [];
   //Make this in quiz so every screen can see it
   void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
+    //selectedAnswers = [];
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = StartScreen(switchScreen);
+        activeScreen = ResultsScreen(
+          chosenAnswers: selectedAnswers);
       });
     }
   }
