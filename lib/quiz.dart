@@ -16,13 +16,16 @@ class _QuizState extends State<Quiz> {
   //Make this in quiz so every screen can see it
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
+    if (selectedAnswers.length == questions.length) {
+      setState(() {
+        activeScreen = StartScreen(switchScreen);
+      });
+    }
   }
 
   void switchScreen() {
     setState(() {
-      activeScreen = 
-      QuestionsScreen(
-        onSelectedAnswer: chooseAnswer);
+      activeScreen = QuestionsScreen(onSelectedAnswer: chooseAnswer);
     });
   }
 
