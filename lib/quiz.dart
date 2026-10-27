@@ -6,6 +6,7 @@ import 'package:quiz_app_fa26/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
+
   @override
   State<Quiz> createState() {
     return _QuizState();
@@ -15,13 +16,17 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   Widget? activeScreen;
   List<String> selectedAnswers = [];
-  //Make this in quiz so every screen can see it
+
+  // Save each answer here so it can be used on the results screen.
   void chooseAnswer(String answer) {
-    //selectedAnswers = [];
+    selectedAnswers.add(answer);
+
     if (selectedAnswers.length == questions.length) {
       setState(() {
         activeScreen = ResultsScreen(
-          chosenAnswers: selectedAnswers);
+          chosenAnswers: List.of(selectedAnswers),
+          onRestart: restartQuiz,
+        );
       });
     }
   }
@@ -32,10 +37,17 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = StartScreen(switchScreen);
+    });
+  }
+
   @override
   void initState() {
-    activeScreen = StartScreen(switchScreen);
     super.initState();
+    activeScreen = StartScreen(switchScreen);
   }
 
   @override
