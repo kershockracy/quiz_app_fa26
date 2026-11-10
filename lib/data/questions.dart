@@ -61,44 +61,4 @@ const questions = [
       '5'
     ],
   ),
-
-  QuizQuestion(
-    'Which legendary Devils goalie wore number 30?',
-    [
-      'Martin Brodeur', // Correct answer
-      'Cory Schneider',
-      'Chico Resch',
-      'Scott Clemmensen'
-    ],
-  ),
-
-  QuizQuestion(
-    'Who was the captain during all three Devils Stanley Cup wins?',
-    [
-      'Scott Stevens', // Correct answer
-      'Patrik Elias',
-      'Ken Daneyko',
-      'Zach Parise'
-    ],
-  ),
-
-  QuizQuestion(
-    'Who did the Devils defeat to win the 2000 Stanley Cup?',
-    [
-      'Dallas Stars', // Correct answer
-      'Colorado Avalanche',
-      'Anaheim Ducks',
-      'Pittsburgh Penguins'
-    ],
-  ),
-
-  QuizQuestion(
-    'What arena do the New Jersey Devils currently call home?',
-    [
-      'Prudential Center', // Correct answer
-      'Continental Airlines Arena',
-      'Madison Square Garden',
-      'Nassau Coliseum'
-    ],
-  ),
 ];
